@@ -1,14 +1,14 @@
 package conexion;
 
-/**
- *
- * @author gcca
- */
 import java.io.*;
 import java.net.*;
 
 import patron.observador.Observador;
 
+/**
+ *
+ * @author gcca
+ */
 public class Cliente implements Observador {
 
     private static Cliente instancia = null;

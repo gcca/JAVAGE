@@ -1,11 +1,11 @@
 package motor.objeto;
 
+import java.util.List;
+
 /**
  *
  * @author gcca
  */
-import java.util.List;
-
 public class Jugador {
 
     private int recurso = 300;

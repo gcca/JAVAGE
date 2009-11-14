@@ -1,9 +1,5 @@
 package conexion;
 
-/**
- *
- * @author gcca
- */
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -11,6 +7,10 @@ import java.util.*;
 import patron.observador.Sujeto;
 import hilo.Hilo;
 
+/**
+ *
+ * @author gcca
+ */
 public class Servidor implements Sujeto {
 
     private static Servidor instancia = null;

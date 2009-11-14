@@ -1,5 +1,9 @@
 package motor.objeto;
 
+/**
+ *
+ * @author gcca
+ */
 public class Objeto {
 
     private int x;

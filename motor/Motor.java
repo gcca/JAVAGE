@@ -1,12 +1,12 @@
 package motor;
 
+import conexion.Servidor;
+import motor.accion.Accion;
+
 /**
  *
  * @author gcca
  */
-import conexion.Servidor;
-import motor.accion.Accion;
-
 public class Motor {
 
     private Matriz mapa = new Matriz();
