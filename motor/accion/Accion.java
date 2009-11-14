@@ -1,11 +1,11 @@
 package motor.accion;
 
+import motor.Matriz;
+
 /**
  *
  * @author gcca
  */
-import motor.Matriz;
-
 public abstract class Accion {
 
     public enum Tipo {
