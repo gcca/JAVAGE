@@ -71,8 +71,10 @@ public class Servidor implements Sujeto {
                 try {
                     final _Cliente _c = new _Cliente();
                     _c.cliente = ranura.accept();
-                    _c.flujoSalida = new ObjectOutputStream(_c.cliente.getOutputStream());
-                    _c.flujoEntrada = new ObjectInputStream(_c.cliente.getInputStream());
+                    _c.flujoSalida = new ObjectOutputStream(
+                            _c.cliente.getOutputStream());
+                    _c.flujoEntrada = new ObjectInputStream(
+                            _c.cliente.getInputStream());
                     clientes.add(_c);
                     new Hilo() {
 
@@ -93,5 +95,9 @@ public class Servidor implements Sujeto {
                 return false;
             }
         };
+    }
+
+    public int clientesN() {
+        return clientes.size();
     }
 }

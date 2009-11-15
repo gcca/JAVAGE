@@ -18,11 +18,15 @@ public class Motor {
 
     public void juego() throws Exception {
         //Inicio de juego (falta)
+        while (servidor.clientesN() < 4) {
+        }
 
-        Accion accion = (Accion) servidor.recibir();
-        accion.accion(mapa);
-        servidor.notificarObservadores(mapa);
+        //Iniciar mapa
 
-        //ejemplo de mover
+        while (true) {
+            Accion accion = (Accion) servidor.recibir();
+            accion.accion(mapa);
+            servidor.notificarObservadores(mapa);
+        }
     }
 }
