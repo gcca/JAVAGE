@@ -1,6 +1,7 @@
 package motor.accion;
 
 import motor.Matriz;
+import motor.objeto.Personaje;
 
 /**
  *
@@ -9,6 +10,8 @@ import motor.Matriz;
 public class Ataque extends Accion {
 
     public boolean accion(Matriz mapa) {
+
+        ((Personaje) mapa.pos(ox, oy)).atacar((Personaje) mapa.pos(dx, dy));
         return true;
     }
 }
