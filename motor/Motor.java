@@ -1,6 +1,7 @@
 package motor;
 
 import conexion.Servidor;
+import conexion.objeto.Paquete;
 import java.util.*;
 import motor.accion.Accion;
 import motor.objeto.Jugador;
@@ -64,8 +65,8 @@ public class Motor {
                 }
             }
 
-            servidor.notificarObservadores(mapa_car);
-            servidor.notificarObservadores(accion);
+            Paquete p = new Paquete(mapa_car, accion);
+            servidor.notificarObservadores(p);
         }
     }
 }

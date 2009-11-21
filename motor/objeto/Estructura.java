@@ -10,6 +10,7 @@ public class Estructura extends Objeto {
 
     public Estructura(int x, int y, String imagen) {
         super(x, y, imagen);
+        tipo = Tipo.estructura;
     }
 
     public int getVida() {

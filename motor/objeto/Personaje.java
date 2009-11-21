@@ -12,6 +12,7 @@ public class Personaje extends Objeto {
 
     public Personaje(int x, int y, String imagen) {
         super(x, y, imagen);
+        tipo = Tipo.personaje;
     }
 
     public void atacar(Personaje p) {

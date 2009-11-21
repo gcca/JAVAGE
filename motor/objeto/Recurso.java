@@ -10,6 +10,7 @@ public class Recurso extends Objeto {
 
     public Recurso(int x, int y, String imagen) {
         super(x, y, imagen);
+        tipo = Tipo.recurso;
     }
 
     public void consumir(int cantidad) {

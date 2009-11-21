@@ -14,7 +14,7 @@ public class Objeto {
         personaje,
         recurso
     }
-    public Tipo tipo;
+    public Tipo tipo=Tipo.objeto;
     private int x;
     private int y;
     private String imagen = null;
