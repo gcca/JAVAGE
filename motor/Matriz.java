@@ -21,4 +21,8 @@ public class Matriz {
     public Objeto pos(int x, int y) {
         return matriz[x][y];
     }
+
+    public void ingresar(int x, int y, Objeto o) {
+        matriz[x][y] = o;
+    }
 }

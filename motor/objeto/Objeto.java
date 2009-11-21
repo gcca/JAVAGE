@@ -6,6 +6,15 @@ package motor.objeto;
  */
 public class Objeto {
 
+    public enum Tipo {
+
+        estructura,
+        jugador,
+        objeto,
+        personaje,
+        recurso
+    }
+    public Tipo tipo;
     private int x;
     private int y;
     private String imagen = null;

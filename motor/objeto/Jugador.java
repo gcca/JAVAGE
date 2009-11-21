@@ -1,5 +1,6 @@
 package motor.objeto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,15 +9,15 @@ import java.util.List;
  */
 public class Jugador {
 
-    private int recurso = 300;
-    private List<Personaje> personajes;
-    private List<Estructura> estructuras;
+    public int recurso = 300;
+    private List<Personaje> personajes = new ArrayList<Personaje>();
+    private List<Estructura> estructuras = new ArrayList<Estructura>();
 
-    public void mover(Personaje p) {
-        //personajes.toArray()[0];
+    public void crearEstructura(Estructura e) {
+        estructuras.add(e);
     }
 
-    public void construir(Estructura e) {
-        estructuras.add(e);
+    public void crearPersonaje(Personaje p) {
+        personajes.add(p);
     }
 }
