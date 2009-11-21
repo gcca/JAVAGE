@@ -1,7 +1,10 @@
 package motor;
 
 import conexion.Servidor;
+import java.util.*;
 import motor.accion.Accion;
+import motor.objeto.Jugador;
+import motor.objeto.Personaje;
 
 /**
  *
@@ -12,17 +15,31 @@ public class Motor {
     private Matriz mapa = new Matriz();
     private char mapa_car[][] = new char[50][50];
     private Servidor servidor;
+    private List<Jugador> jugadores = new ArrayList<Jugador>();
 
     public Motor() throws Exception {
         servidor = Servidor.obtenerInstancia();
     }
 
     public void juego() throws Exception {
-        //Inicio de juego (falta)
-        while (servidor.clientesN() < 4) {
+        int ant = servidor.clientesN();
+        int act = ant;
+        while ((act = servidor.clientesN()) < 4) {
+            if (ant != act) {
+                jugadores.add(new Jugador());
+                ant = act;
+            }
         }
 
-        //Iniciar mapa
+        Personaje temp;
+        jugadores.get(0).crearPersonaje(temp = new Personaje(0, 0, null));
+        mapa.ingresar(0, 0, temp);
+        jugadores.get(1).crearPersonaje(new Personaje(0, 50, null));
+        mapa.ingresar(0, 50, temp);
+        jugadores.get(2).crearPersonaje(new Personaje(50, 0, null));
+        mapa.ingresar(50, 0, temp);
+        jugadores.get(3).crearPersonaje(new Personaje(50, 50, null));
+        mapa.ingresar(50, 50, temp);
 
         while (true) {
             Accion accion = (Accion) servidor.recibir();
@@ -48,6 +65,7 @@ public class Motor {
             }
 
             servidor.notificarObservadores(mapa_car);
+            servidor.notificarObservadores(accion);
         }
     }
 }
